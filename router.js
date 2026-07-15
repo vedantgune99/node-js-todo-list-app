@@ -1,5 +1,5 @@
 import serveStaticFile from "./utils/serveStaticFiles.js";
-import { getAllTodos } from "./service.js";
+import { getAllTodos, addTodo } from "./service.js";
 
 const router = async (request, response) => {
     console.log(`Received ${request.method} request for ${request.url}`);
@@ -13,9 +13,10 @@ const router = async (request, response) => {
         await serveStaticFile(request, response, "styles.css");
     }
 
-    else if (request.url === '/about' && request.method === 'GET') {
-        response.writeHead(200, { 'Content-Type': 'text/plain' });
-        response.end('This is the about page.');
+    else if (request.url === '/add-todo' && request.method === 'POST') {
+        await addTodo(request);
+        response.writeHead(302, { 'Location': '/' });
+        response.end();
     }
 
     else {

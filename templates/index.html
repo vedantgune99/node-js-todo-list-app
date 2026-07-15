@@ -17,15 +17,13 @@
 
             <!-- Add Todo Form -->
 
-            <form class="row g-3 mb-5">
+            <form class="row g-3 mb-5" action="/add-todo" method="POST">
                 <div class="col-md-9">
-                    <input type="text" class="form-control" placeholder="Write a new todo...">
+                    <input type="text" class="form-control" placeholder="Write a new todo..." name="title">
                 </div>
 
                 <div class="col-md-3 d-grid">
-                    <button class="btn btn-dark">
-                        Add Todo
-                    </button>
+                    <input type="submit" class="btn btn-dark" value="Add Todo">
                 </div>
             </form>
 
