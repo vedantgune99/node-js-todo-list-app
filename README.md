@@ -17,13 +17,13 @@ Key features:
 
 ```mermaid
 flowchart TD
-    Browser[Browser / Client]
-    Router[Router<br/>(todo/router.js)]
-    Service[Service Layer<br/>(todo/service.js)]
-    Static[Static File Renderer<br/>(utils/serveStaticFiles.js)]
-    Data[Data Layer<br/>(utils/jsonReaderWriter.js)]
-    JSONFile[data/data.json]
-    Templates[Templates<br/>(templates/index.html, templates/styles.css)]
+    Browser["Browser / Client"]
+    Router["Router (todo/router.js)"]
+    Service["Service Layer (todo/service.js)"]
+    Static["Static File Renderer (utils/serveStaticFiles.js)"]
+    Data["Data Layer (utils/jsonReaderWriter.js)"]
+    JSONFile["data/data.json"]
+    Templates["Templates (templates/index.html, templates/styles.css)"]
 
     Browser -->|GET /| Router
     Browser -->|GET /styles| Router
