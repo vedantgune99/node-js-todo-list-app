@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { contentTypes, templatesDir } from "../config.js";
+import { contentTypes, templatesDir } from ".././config/config.js";
 import path from "path";
 
 const createResponse = (res, statusCode, data, filePath) => {

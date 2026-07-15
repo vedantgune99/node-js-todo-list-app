@@ -1,4 +1,4 @@
-import serveStaticFile from "./utils/serveStaticFiles.js";
+import serveStaticFile from "../utils/serveStaticFiles.js";
 import { getAllTodos, addTodo, deleteTodoById, updateTodo } from "./service.js";
 
 const router = async (request, response) => {

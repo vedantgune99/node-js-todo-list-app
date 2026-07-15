@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-import { dataFilePath } from '../config.js';
+import { dataFilePath } from '.././config/config.js';
 
 const readJson = async () => {
     try {
