@@ -17,6 +17,10 @@ const addTodo = async (req) => {
         const todos = await readJson();
 
         const formData = await getRequestFormData(req);
+        if (formData.title.trim() === "") {
+            console.log("Todo title cannot be empty.");
+            return;
+        }
 
         const newTodo = {
             id: todos.todoList.length + 1,
@@ -37,7 +41,7 @@ const deleteTodoById = async (id) => {
         const todos = await readJson();
         const index = todos.todoList.findIndex(todo => todo.id === parseInt(id));
         if (index !== -1) {
-            const deletedTodo = todos.todoList.splice(index, 1); 
+            const deletedTodo = todos.todoList.splice(index, 1);
             await writeJson(todos);
             console.log("Todo deleted successfully:", deletedTodo);
         } else {
@@ -49,4 +53,23 @@ const deleteTodoById = async (id) => {
 }
 
 
-export { getAllTodos, addTodo, deleteTodoById };
+const updateTodo = async (req) => {
+    try {
+        const todos = await readJson();
+        const formData = await getRequestFormData(req);
+        const id = parseInt(formData.id);
+        const index = todos.todoList.findIndex(todo => todo.id === id);
+        if (index !== -1) {
+            todos.todoList[index].title = formData.title;
+            todos.todoList[index].completed = formData.completed === 'true';
+            await writeJson(todos);
+            console.log("Todo updated successfully:", todos.todoList[index]);
+        } else {
+            console.log(`Todo with id ${id} not found.`);
+        }
+    } catch (err) {
+        console.log("Error occurred while updating a todo: ", err.message);
+    }
+}
+
+export { getAllTodos, addTodo, deleteTodoById, updateTodo };

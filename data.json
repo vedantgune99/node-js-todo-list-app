@@ -2,7 +2,17 @@
   "todoList": [
     {
       "id": 1,
-      "title": "todo1",
+      "title": "Learn Node.js",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Create a todo list application!",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Read up about Next.js",
       "completed": false
     }
   ]
