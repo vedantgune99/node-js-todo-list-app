@@ -32,4 +32,21 @@ const addTodo = async (req) => {
 }
 
 
-export { getAllTodos, addTodo };
+const deleteTodoById = async (id) => {
+    try {
+        const todos = await readJson();
+        const index = todos.todoList.findIndex(todo => todo.id === parseInt(id));
+        if (index !== -1) {
+            const deletedTodo = todos.todoList.splice(index, 1); 
+            await writeJson(todos);
+            console.log("Todo deleted successfully:", deletedTodo);
+        } else {
+            console.log(`Todo with id ${id} not found.`);
+        }
+    } catch (err) {
+        console.log("Error occurred while deleting a todo: ", err.message);
+    }
+}
+
+
+export { getAllTodos, addTodo, deleteTodoById };
