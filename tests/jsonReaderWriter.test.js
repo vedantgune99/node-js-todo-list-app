@@ -9,7 +9,7 @@ const { readJson } = await import("../utils/jsonReaderWriter.js");
 
 const testData = { todoList: [{ 'id': 1, 'title': 'test todo', 'completed': false }] }
 
-// To test the function given above
+
 test('readJson should read and parse JSON data from the file', async (t) => {
     await t.test('should return an object with a todoList array', async () => {
         fs.writeFileSync(dataFilePath, JSON.stringify(testData), 'utf8');
