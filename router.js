@@ -1,5 +1,5 @@
 import serveStaticFile from "./utils/serveStaticFiles.js";
-import { getAllTodos, addTodo, deleteTodoById } from "./service.js";
+import { getAllTodos, addTodo, deleteTodoById, updateTodo } from "./service.js";
 
 const router = async (request, response) => {
     console.log(`Received ${request.method} request for ${request.url}`);
@@ -23,6 +23,12 @@ const router = async (request, response) => {
         const id = request.url.split('/').pop();
         console.log(`Deleting todo with id: ${id}`);
         await deleteTodoById(id);
+        response.writeHead(302, { 'Location': '/' });
+        response.end();
+    }
+
+    else if (request.url === '/update-todo' && request.method === 'POST') {
+        await updateTodo(request);
         response.writeHead(302, { 'Location': '/' });
         response.end();
     }
