@@ -1,13 +1,15 @@
-import serveStaticFile from "./serveStaticFiles.js";
+import serveStaticFile from "./utils/serveStaticFiles.js";
+import { getAllTodos } from "./service.js";
 
 const router = async (request, response) => {
     console.log(`Received ${request.method} request for ${request.url}`);
 
     if (request.url === '/' && request.method === 'GET') {
-        await serveStaticFile(request, response, "index.html");
+        const todos = await getAllTodos(request);
+        await serveStaticFile(request, response, "index.html", todos);
     }
 
-    else if (request.url === '/styles' && request.method === 'GET'){
+    else if (request.url === '/styles' && request.method === 'GET') {
         await serveStaticFile(request, response, "styles.css");
     }
 

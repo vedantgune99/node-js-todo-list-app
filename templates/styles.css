@@ -1,0 +1,107 @@
+body {
+    background: #f7f7f7;
+    color: #111;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.todo-card {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .05);
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 14px;
+    border: 1px solid #bbb;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #000;
+    box-shadow: none;
+}
+
+.btn {
+    border-radius: 999px;
+    padding-inline: 1.25rem;
+}
+
+.btn-dark {
+    background: #000;
+    border: none;
+}
+
+.btn-dark:hover {
+    background: #222;
+}
+
+.btn-outline-dark:hover {
+    color: #fff;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    border-bottom: 2px solid #000;
+    font-weight: 700;
+}
+
+.table tbody tr:hover {
+    background: #fafafa;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.status-badge {
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.modal-content {
+    border-radius: 18px;
+    border: none;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #eee;
+}
+
+@media (max-width: 768px) {
+
+    .todo-card {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: .5rem;
+    }
+
+    td .btn {
+        width: auto;
+        margin-top: 0;
+    }
+
+}
