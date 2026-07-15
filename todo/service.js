@@ -1,5 +1,5 @@
-import { readJson, writeJson } from "./utils/jsonReaderWriter.js";
-import getRequestFormData from "./utils/reqParser.js";
+import { readJson, writeJson } from "../utils/jsonReaderWriter.js";
+import getRequestFormData from "../utils/reqParser.js";
 
 const getAllTodos = async (req) => {
     try {

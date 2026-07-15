@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import { dataFilePath } from '.././config/config.js';
 
-const readJson = async () => {
+const readJson = async (filePath = dataFilePath) => {
     try {
         const fileContents = await fs.readFile(dataFilePath, 'utf8');
         const parsedData = JSON.parse(fileContents);
