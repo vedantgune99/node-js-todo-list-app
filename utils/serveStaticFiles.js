@@ -11,8 +11,9 @@ const createResponse = (res, statusCode, data, filePath) => {
 }
 
 const renderTodos = (todos = {}) => {
+    const todoList = Array.isArray(todos?.todoList) ? todos.todoList : [];
 
-    return todos.todoList.map((todo, index) => `
+    return todoList.map((todo, index) => `
         <tr>
             <td>${index + 1}</td>
             <td>${todo.title}</td>
@@ -40,7 +41,7 @@ const renderTodos = (todos = {}) => {
 };
 
 
-const serveStaticFile = async (req, res, fileName, todos = []) => {
+const serveStaticFile = async (req, res, fileName, todos = {}) => {
     let filePath = path.join(templatesDir, fileName);
     try {
         let data = await fs.readFile(filePath, { encoding: "utf-8" });
