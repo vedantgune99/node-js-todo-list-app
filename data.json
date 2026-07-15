@@ -2,32 +2,7 @@
   "todoList": [
     {
       "id": 1,
-      "title": "Buy groceries",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "title": "Walk the dog",
-      "completed": true
-    },
-    {
-      "id": 3,
-      "title": "Learn JavaScript",
-      "completed": false
-    },
-    {
-      "id": 4,
-      "title": "test todo",
-      "completed": false
-    },
-    {
-      "id": 5,
-      "title": "sample test 123",
-      "completed": false
-    },
-    {
-      "id": 6,
-      "title": "sample test",
+      "title": "todo1",
       "completed": false
     }
   ]

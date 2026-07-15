@@ -13,6 +13,10 @@ const createResponse = (res, statusCode, data, filePath) => {
 const renderTodos = (todos = {}) => {
     const todoList = Array.isArray(todos?.todoList) ? todos.todoList : [];
 
+    if (todoList.length === 0) {
+        return `<tr><td colspan="4" class="text-center">No todos found.</td></tr>`;
+    }
+
     return todoList.map((todo, index) => `
         <tr>
             <td>${index + 1}</td>
